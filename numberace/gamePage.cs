@@ -501,7 +501,7 @@ namespace numberace
             if (dialogResult == DialogResult.Yes) // if the yes button is chosen
             {
                 this.Hide(); // hide this form (gamepage)
-                customPage back = new customPage(); // link to customPage
+                homePage back = new homePage(); // link to customPage
                 back.Show(); // show customPage form
             }
             else if (dialogResult == DialogResult.No) // if the no button is chosen
