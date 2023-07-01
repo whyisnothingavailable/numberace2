@@ -119,228 +119,7 @@ namespace numberace
             int x = -48;
             int y = 0;
 
-            if (additionCheck.Checked == true)
-            {
-                if (subtractionCheck.Checked == true)
-                {
-                    if (multipCheck.Checked == true)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 5); // generate random option int (1 
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                subGo(sender, e);
-                            }
-                            if (quesRan == 3)
-                            {
-                                mulGo(sender, e);
-                            }
-                            if (quesRan == 4)
-                            {
-                                divGo(sender, e);
-                            }
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            quesRan = rnd.Next(1, 4); // generate random option int (1 
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                subGo(sender, e);
-                            }
-                            if (quesRan == 3)
-                            {
-                                mulGo(sender, e);
-                            }
-                        }
-                    }
-                    if (multipCheck.Checked == false)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 4);
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                subGo(sender, e);
-                            }
-                            if (quesRan == 3)
-                            {
-                                divGo(sender, e);
-                            }
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            quesRan = rnd.Next(1, 3);
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                subGo(sender, e);
-                            }
-                        }
-                    }
-                }
-                if (subtractionCheck.Checked == false)
-                {
-                    if (multipCheck.Checked == true)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 4);
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                mulGo(sender, e);
-                            }
-                            if (quesRan == 3)
-                            {
-                                divGo(sender, e);
-                            }
-
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            quesRan = rnd.Next(1, 3);
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                mulGo(sender, e);
-                            }
-                        }
-                    }
-                    if (multipCheck.Checked == false)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 3);
-                            if (quesRan == 1)
-                            {
-                                addGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                divGo(sender, e);
-                            }
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            addGo(sender, e);
-                        }
-                    }
-                }
-            } // if addition is checked
-
-            if (additionCheck.Checked == false)
-            {
-                if (subtractionCheck.Checked == true)
-                {
-                    if (multipCheck.Checked == true)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 4);
-                            if (quesRan == 1)
-                            {
-                                subGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                mulGo(sender, e);
-                            }
-                            if (quesRan == 3)
-                            {
-                                divGo(sender, e);
-                            }
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            quesRan = rnd.Next(1, 3);
-                            if (quesRan == 1)
-                            {
-                                subGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                mulGo(sender, e);
-                            }
-                        }
-                    }
-                    if (multipCheck.Checked == false)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 3);
-                            if (quesRan == 1)
-                            {
-                                subGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                divGo(sender, e);
-                            }
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            subGo(sender, e);
-                        }
-                    }
-                }
-                if (subtractionCheck.Checked == false)
-                {
-                    if (multipCheck.Checked == true)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            quesRan = rnd.Next(1, 3);
-                            if (quesRan == 1)
-                            {
-                                mulGo(sender, e);
-                            }
-                            if (quesRan == 2)
-                            {
-                                divGo(sender, e);
-                            }
-
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            mulGo(sender, e);
-                        }
-
-                    }
-                    if (multipCheck.Checked == false)
-                    {
-                        if (diviCheck.Checked == true)
-                        {
-                            divGo(sender, e);
-                        }
-                        if (diviCheck.Checked == false)
-                        {
-                            questionLabel.Text = "You didn't pick anything!!";
-                        }
-                    }
-                }
-            } // if addition is not checked
+            
 
         }
         private void correct_Answer(object sender, EventArgs e) // method for correct answer
@@ -353,6 +132,8 @@ namespace numberace
             carCount = (carCount +500);
                        bot1_Race(sender, e);
                        bot2_Race(sender, e);
+            playerCar.Top = playerCar.Top + 5;
+
 
         }
         private void incorrect_Answer(object sender, EventArgs e)
@@ -361,11 +142,12 @@ namespace numberace
             totalScore.Text = score.ToString(); //// display (new) total score
             //horn.Play();
             quizPanel.BackColor = Color.Red;
-                       bot1_Race(sender, e);
-                       bot2_Race(sender, e);
+            botCar1.Top = botCar1.Top + 5;
+            botCar2.Top = botCar2.Top + 5;
+
         }
 
-                private void bot1_Race(object sender, EventArgs e)
+        private void bot1_Race(object sender, EventArgs e)
                 {
                     Random rnd = new Random(); // 
                     int botRan = rnd.Next(0, 2); // 
@@ -404,12 +186,72 @@ namespace numberace
             gamePanel.Visible = true;
             countDownTimer.Stop();
             backButton.Enabled = false;
+            if (playerCar.Top > botCar1.Top)
+            {
+                if (playerCar.Top > botCar2.Top)
+                {
+                    gameLbl.Text = "1ST";
+
+                }
+                if (playerCar.Top < botCar2.Top)
+                {
+                    gameLbl.Text = "2ND";
+                }
+
+
+            }
+            if (playerCar.Top > botCar2.Top)
+            {
+                if (playerCar.Top > botCar1.Top)
+                {
+                    gameLbl.Text = "1ST";
+
+                }
+                if (playerCar.Top > botCar1.Top)
+                {
+                    gameLbl.Text = "2ND";
+                }
+            }
+            if (playerCar.Top < botCar2.Top)
+            {
+                if (playerCar.Top > botCar1.Top)
+                {
+                    gameLbl.Text = "2ND";
+
+                }
+                if (playerCar.Top < botCar1.Top)
+                {
+                    gameLbl.Text = "3RD";
+                }
+            }
+            if (playerCar.Top < botCar1.Top)
+            {
+                if (playerCar.Top > botCar2.Top)
+                {
+                    gameLbl.Text = "2ND";
+
+                }
+                if (playerCar.Top < botCar2.Top)
+                {
+                    gameLbl.Text = "3RD";
+                }
+            }
+            int a = Int32.Parse(label1.Text);
+            if (score > a)
+            {
+                label1.Text = score.ToString();
+                Properties.Settings.Default.h_score = label1.Text;
+                Properties.Settings.Default.Save();
+            }
+
         }
 
         private void beginButton_Click(object sender, EventArgs e)
         {
             seconds = 3;
             countDownTimer.Start();
+            gamePanel.Visible = false;
+            beginButton.Visible = false;
         }
 
         private void optionButton1_Click_1(object sender, EventArgs e)
@@ -478,7 +320,9 @@ namespace numberace
             optionButton2.Text = ""; // and this one
             optionButton3.Text = ""; // and this one
             optionButton4.Text = ""; // and this one
-            gamePanel.Visible = false;
+            gamePanel.Visible = true;
+            retryButton.Enabled = false;
+            homeButton.Enabled = false;
 
         }
 
@@ -533,7 +377,7 @@ namespace numberace
                     optionButton3.Enabled = true;
                     optionButton4.Enabled = true;
             }
-            while (seconds < -1)
+            if (seconds < -1)
             {
                 trackPicBox.Top = trackPicBox.Top + 20;
                 carCount = carCount + 20;
@@ -551,6 +395,16 @@ namespace numberace
             this.Hide(); // hide this form (gamepage)
                 homePage back = new homePage(); // link to homepage
                 back.Show(); // show homepage form
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gameLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
