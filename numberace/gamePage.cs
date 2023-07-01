@@ -36,28 +36,28 @@ namespace numberace
         int quesRan;
         int num1;
         int num2;
-        int correctCount;
+        int carCount;
 
         private void addGo(object sender, EventArgs e)
         {
             answer = num1 + num2;
-            questionLabel.Text = num1.ToString() + " + " + num2.ToString() + " = ";
+            questionLabel.Text = num1.ToString() + " + " + num2.ToString() ;
         }
         private void subGo(object sender, EventArgs e)
         {
             answer = num1 - num2;
-            questionLabel.Text = num1.ToString() + " - " + num2.ToString() + " = ";
+            questionLabel.Text = num1.ToString() + " - " + num2.ToString() ;
         }
         private void mulGo(object sender, EventArgs e)
         {
             answer = num1 * num2;
-            questionLabel.Text = num1.ToString() + " x " + num2.ToString() + " = ";
+            questionLabel.Text = num1.ToString() + " x " + num2.ToString() ;
         }
         private void divGo(object sender, EventArgs e)
         {
             int multi = num1 * num2;
             answer = num1;
-            questionLabel.Text = multi.ToString() + " ÷ " + num2.ToString() + " = ";
+            questionLabel.Text = multi.ToString() + " ÷ " + num2.ToString();
         }
         private void generate_Question(object sender, EventArgs e)
         {
@@ -67,6 +67,7 @@ namespace numberace
             op2 = false; // set op2 as false
             op3 = false; // set op3 as false
             op4 = false; // set op4 as false
+
 
 
             Random rnd = new Random(); // create a new Random variable called rnd
@@ -111,10 +112,9 @@ namespace numberace
                 op4 = true; // set op3 as true because optionButton3 has the correct answer
             }
 
-            if (correctCount > 8)
+            if (carCount >= 100)
             {
-                playerCar.Location = new Point(200, 700);
-                correctCount = 0;
+                endGame(sender, e);
             }
 
             int x = -48;
@@ -346,19 +346,19 @@ namespace numberace
         }
         private void correct_Answer(object sender, EventArgs e) // method for correct answer
         {
-            score = score + 10; // add 1 to score
+            score = score + 100; // add 100 to score
             totalScore.Text = score.ToString(); // display (new) total score
             trackPicBox.Top = trackPicBox.Top + 200;
             //ding.Play();
             quizPanel.BackColor = Color.Green;
-            correctCount++;
+            carCount = (carCount +500);
                        bot1_Race(sender, e);
                        bot2_Race(sender, e);
 
         }
         private void incorrect_Answer(object sender, EventArgs e)
         {
-            score = score - 5; // minus 1 from score
+            score = score - 20; // minus 1 from score
             totalScore.Text = score.ToString(); //// display (new) total score
             //horn.Play();
             quizPanel.BackColor = Color.Red;
@@ -403,7 +403,8 @@ namespace numberace
             optionButton4.Text = ""; // and this one
             totalScore.Text = score.ToString(); // write in the totalScore label: "Total Score = (insert score)"
             gamePanel.Visible = true;
-
+            countDownTimer.Stop();
+            backButton.Enabled = false;
         }
 
         private void beginButton_Click(object sender, EventArgs e)
@@ -517,8 +518,8 @@ namespace numberace
             if (seconds < 0)
             {
                 countdownLabel.Text = "Go!";
-                
-                if (seconds == -2)
+            }
+            if (seconds == -2)
                 {
                     trackPicBox.Top = trackPicBox.Top + 300;
                     countdownLabel.Visible = false;
@@ -533,21 +534,24 @@ namespace numberace
                     optionButton4.Enabled = true;
                     correctCount = 0;
                 }
-               
-            }
-            if (seconds < -1)
+            while (seconds < -1)
             {
-                trackPicBox.Top = trackPicBox.Top + 10;
+                trackPicBox.Top = trackPicBox.Top + 20;
+                carCount = carCount + 20;
             }
         }
 
-        private void trackPicBox_Click(object sender, EventArgs e)
+ 
+        private void retryButton_Click(object sender, EventArgs e)
         {
-
+            gamePage_Load_1(sender, e);
         }
 
-        private void gamePage_Shown(object sender, EventArgs e)
+        private void homeButton_Click(object sender, EventArgs e)
         {
+            this.Hide(); // hide this form (gamepage)
+                homePage back = new homePage(); // link to homepage
+                back.Show(); // show homepage form
         }
     }
 }

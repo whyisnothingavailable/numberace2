@@ -55,8 +55,8 @@
             this.gamePanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.homeButton = new System.Windows.Forms.Button();
+            this.retryButton = new System.Windows.Forms.Button();
             this.awards = new System.Windows.Forms.PictureBox();
             this.rankingLbl = new System.Windows.Forms.Label();
             this.gameLbl = new System.Windows.Forms.Label();
@@ -232,7 +232,6 @@
             this.trackPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.trackPicBox.TabIndex = 0;
             this.trackPicBox.TabStop = false;
-            this.trackPicBox.Click += new System.EventHandler(this.trackPicBox_Click);
             // 
             // quizPanel
             // 
@@ -345,8 +344,8 @@
             this.gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gamePanel.Controls.Add(this.textBox1);
             this.gamePanel.Controls.Add(this.label2);
-            this.gamePanel.Controls.Add(this.button3);
-            this.gamePanel.Controls.Add(this.button2);
+            this.gamePanel.Controls.Add(this.homeButton);
+            this.gamePanel.Controls.Add(this.retryButton);
             this.gamePanel.Controls.Add(this.awards);
             this.gamePanel.Controls.Add(this.rankingLbl);
             this.gamePanel.Controls.Add(this.gameLbl);
@@ -371,23 +370,25 @@
             this.label2.TabIndex = 42;
             this.label2.Text = "choose a username you want to be displayed as";
             // 
-            // button3
+            // homeButton
             // 
-            this.button3.Location = new System.Drawing.Point(310, 424);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(223, 65);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Return Home";
-            this.button3.UseVisualStyleBackColor = true;
+            this.homeButton.Location = new System.Drawing.Point(310, 424);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(223, 65);
+            this.homeButton.TabIndex = 4;
+            this.homeButton.Text = "HOME";
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
-            // button2
+            // retryButton
             // 
-            this.button2.Location = new System.Drawing.Point(65, 424);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 65);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Retry?";
-            this.button2.UseVisualStyleBackColor = true;
+            this.retryButton.Location = new System.Drawing.Point(65, 424);
+            this.retryButton.Name = "retryButton";
+            this.retryButton.Size = new System.Drawing.Size(186, 65);
+            this.retryButton.TabIndex = 3;
+            this.retryButton.Text = "RETRY";
+            this.retryButton.UseVisualStyleBackColor = true;
+            this.retryButton.Click += new System.EventHandler(this.retryButton_Click);
             // 
             // awards
             // 
@@ -486,7 +487,6 @@
             this.Text = "gamePage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.gamePage_Load_1);
-            this.Shown += new System.EventHandler(this.gamePage_Shown);
             this.backPanel.ResumeLayout(false);
             this.racePanel.ResumeLayout(false);
             this.racePanel.PerformLayout();
@@ -536,8 +536,8 @@
         private System.Windows.Forms.Panel gamePanel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Button retryButton;
         private System.Windows.Forms.PictureBox awards;
         private System.Windows.Forms.Label rankingLbl;
         private System.Windows.Forms.Label gameLbl;
