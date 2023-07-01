@@ -69,7 +69,6 @@ namespace numberace
             op4 = false; // set op4 as false
 
 
-
             Random rnd = new Random(); // create a new Random variable called rnd
             num1 = rnd.Next(0, 3); // generate random int x
             num2 = rnd.Next(0, 3); // generate random int y
@@ -480,12 +479,13 @@ namespace numberace
             optionButton3.Text = ""; // and this one
             optionButton4.Text = ""; // and this one
             gamePanel.Visible = false;
+
         }
 
         private void correctTimer_Tick(object sender, EventArgs e)
         {
             colourSeconds++;
-            while (colourSeconds < 5)
+            if (colourSeconds < 5)
             {
                 quizPanel.BackColor = Color.Green;
             }
@@ -532,8 +532,7 @@ namespace numberace
                     optionButton2.Enabled = true;
                     optionButton3.Enabled = true;
                     optionButton4.Enabled = true;
-                    correctCount = 0;
-                }
+            }
             while (seconds < -1)
             {
                 trackPicBox.Top = trackPicBox.Top + 20;

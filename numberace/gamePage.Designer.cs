@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gamePage));
             this.backPanel = new System.Windows.Forms.TableLayoutPanel();
             this.racePanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.diviCheck = new System.Windows.Forms.CheckBox();
+            this.multipCheck = new System.Windows.Forms.CheckBox();
+            this.subtractionCheck = new System.Windows.Forms.CheckBox();
+            this.additionCheck = new System.Windows.Forms.CheckBox();
             this.countdownLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.beginButton = new System.Windows.Forms.Button();
@@ -60,13 +65,9 @@
             this.awards = new System.Windows.Forms.PictureBox();
             this.rankingLbl = new System.Windows.Forms.Label();
             this.gameLbl = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.diviCheck = new System.Windows.Forms.CheckBox();
-            this.multipCheck = new System.Windows.Forms.CheckBox();
-            this.subtractionCheck = new System.Windows.Forms.CheckBox();
-            this.additionCheck = new System.Windows.Forms.CheckBox();
             this.backPanel.SuspendLayout();
             this.racePanel.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botCar1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,7 +79,6 @@
             this.optionPanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awards)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // backPanel
@@ -116,14 +116,72 @@
             this.racePanel.Size = new System.Drawing.Size(720, 938);
             this.racePanel.TabIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.diviCheck);
+            this.panel4.Controls.Add(this.multipCheck);
+            this.panel4.Controls.Add(this.subtractionCheck);
+            this.panel4.Controls.Add(this.additionCheck);
+            this.panel4.Location = new System.Drawing.Point(12, 768);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(479, 158);
+            this.panel4.TabIndex = 51;
+            // 
+            // diviCheck
+            // 
+            this.diviCheck.AutoSize = true;
+            this.diviCheck.Location = new System.Drawing.Point(269, 96);
+            this.diviCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.diviCheck.Name = "diviCheck";
+            this.diviCheck.Size = new System.Drawing.Size(120, 29);
+            this.diviCheck.TabIndex = 44;
+            this.diviCheck.Text = "Division";
+            this.diviCheck.UseVisualStyleBackColor = true;
+            // 
+            // multipCheck
+            // 
+            this.multipCheck.AutoSize = true;
+            this.multipCheck.Location = new System.Drawing.Point(269, 32);
+            this.multipCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.multipCheck.Name = "multipCheck";
+            this.multipCheck.Size = new System.Drawing.Size(170, 29);
+            this.multipCheck.TabIndex = 43;
+            this.multipCheck.Text = "Multiplication";
+            this.multipCheck.UseVisualStyleBackColor = true;
+            // 
+            // subtractionCheck
+            // 
+            this.subtractionCheck.AutoSize = true;
+            this.subtractionCheck.Location = new System.Drawing.Point(43, 96);
+            this.subtractionCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.subtractionCheck.Name = "subtractionCheck";
+            this.subtractionCheck.Size = new System.Drawing.Size(153, 29);
+            this.subtractionCheck.TabIndex = 42;
+            this.subtractionCheck.Text = "Subtraction";
+            this.subtractionCheck.UseVisualStyleBackColor = true;
+            // 
+            // additionCheck
+            // 
+            this.additionCheck.AutoSize = true;
+            this.additionCheck.Checked = true;
+            this.additionCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.additionCheck.Location = new System.Drawing.Point(43, 32);
+            this.additionCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.additionCheck.Name = "additionCheck";
+            this.additionCheck.Size = new System.Drawing.Size(122, 29);
+            this.additionCheck.TabIndex = 41;
+            this.additionCheck.Text = "Addition";
+            this.additionCheck.UseVisualStyleBackColor = true;
+            // 
             // countdownLabel
             // 
             this.countdownLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.countdownLabel.AutoSize = true;
-            this.countdownLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countdownLabel.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.countdownLabel.Location = new System.Drawing.Point(264, 657);
             this.countdownLabel.Name = "countdownLabel";
-            this.countdownLabel.Size = new System.Drawing.Size(199, 217);
+            this.countdownLabel.Size = new System.Drawing.Size(303, 244);
             this.countdownLabel.TabIndex = 0;
             this.countdownLabel.Text = "#";
             this.countdownLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,6 +199,7 @@
             // 
             // beginButton
             // 
+            this.beginButton.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beginButton.Location = new System.Drawing.Point(301, 170);
             this.beginButton.Name = "beginButton";
             this.beginButton.Size = new System.Drawing.Size(178, 90);
@@ -215,9 +274,10 @@
             // totalScore
             // 
             this.totalScore.AutoSize = true;
+            this.totalScore.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalScore.Location = new System.Drawing.Point(328, 36);
             this.totalScore.Name = "totalScore";
-            this.totalScore.Size = new System.Drawing.Size(109, 25);
+            this.totalScore.Size = new System.Drawing.Size(155, 27);
             this.totalScore.TabIndex = 1;
             this.totalScore.Text = "totalScore";
             // 
@@ -271,7 +331,7 @@
             // optionButton4
             // 
             this.optionButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton4.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton4.Location = new System.Drawing.Point(360, 369);
             this.optionButton4.Name = "optionButton4";
             this.optionButton4.Size = new System.Drawing.Size(352, 360);
@@ -283,7 +343,7 @@
             // optionButton3
             // 
             this.optionButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton3.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton3.Location = new System.Drawing.Point(3, 369);
             this.optionButton3.Name = "optionButton3";
             this.optionButton3.Size = new System.Drawing.Size(351, 360);
@@ -295,7 +355,7 @@
             // optionButton2
             // 
             this.optionButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton2.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton2.Location = new System.Drawing.Point(360, 3);
             this.optionButton2.Name = "optionButton2";
             this.optionButton2.Size = new System.Drawing.Size(352, 360);
@@ -307,7 +367,7 @@
             // optionButton1
             // 
             this.optionButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton1.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton1.Location = new System.Drawing.Point(3, 3);
             this.optionButton1.Name = "optionButton1";
             this.optionButton1.Size = new System.Drawing.Size(351, 360);
@@ -321,11 +381,11 @@
             this.questionLabel.AllowDrop = true;
             this.questionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.questionLabel.AutoSize = true;
-            this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questionLabel.Font = new System.Drawing.Font("Retro Gaming", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.questionLabel.Location = new System.Drawing.Point(34, 46);
+            this.questionLabel.Location = new System.Drawing.Point(32, 0);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(652, 108);
+            this.questionLabel.Size = new System.Drawing.Size(656, 200);
             this.questionLabel.TabIndex = 1;
             this.questionLabel.Text = "questionLabel";
             // 
@@ -364,14 +424,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 244);
+            this.label2.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(-15, 240);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(474, 25);
+            this.label2.Size = new System.Drawing.Size(642, 27);
             this.label2.TabIndex = 42;
             this.label2.Text = "choose a username you want to be displayed as";
             // 
             // homeButton
             // 
+            this.homeButton.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeButton.Location = new System.Drawing.Point(310, 424);
             this.homeButton.Name = "homeButton";
             this.homeButton.Size = new System.Drawing.Size(223, 65);
@@ -382,6 +444,7 @@
             // 
             // retryButton
             // 
+            this.retryButton.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retryButton.Location = new System.Drawing.Point(65, 424);
             this.retryButton.Name = "retryButton";
             this.retryButton.Size = new System.Drawing.Size(186, 65);
@@ -411,70 +474,12 @@
             // gameLbl
             // 
             this.gameLbl.AutoSize = true;
-            this.gameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameLbl.Location = new System.Drawing.Point(61, 19);
+            this.gameLbl.Font = new System.Drawing.Font("Retro Gaming", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameLbl.Location = new System.Drawing.Point(10, 8);
             this.gameLbl.Name = "gameLbl";
-            this.gameLbl.Size = new System.Drawing.Size(472, 91);
+            this.gameLbl.Size = new System.Drawing.Size(586, 102);
             this.gameLbl.TabIndex = 0;
             this.gameLbl.Text = "Game Over!";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.diviCheck);
-            this.panel4.Controls.Add(this.multipCheck);
-            this.panel4.Controls.Add(this.subtractionCheck);
-            this.panel4.Controls.Add(this.additionCheck);
-            this.panel4.Location = new System.Drawing.Point(12, 768);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(479, 158);
-            this.panel4.TabIndex = 51;
-            // 
-            // diviCheck
-            // 
-            this.diviCheck.AutoSize = true;
-            this.diviCheck.Location = new System.Drawing.Point(269, 96);
-            this.diviCheck.Margin = new System.Windows.Forms.Padding(6);
-            this.diviCheck.Name = "diviCheck";
-            this.diviCheck.Size = new System.Drawing.Size(120, 29);
-            this.diviCheck.TabIndex = 44;
-            this.diviCheck.Text = "Division";
-            this.diviCheck.UseVisualStyleBackColor = true;
-            // 
-            // multipCheck
-            // 
-            this.multipCheck.AutoSize = true;
-            this.multipCheck.Location = new System.Drawing.Point(269, 32);
-            this.multipCheck.Margin = new System.Windows.Forms.Padding(6);
-            this.multipCheck.Name = "multipCheck";
-            this.multipCheck.Size = new System.Drawing.Size(170, 29);
-            this.multipCheck.TabIndex = 43;
-            this.multipCheck.Text = "Multiplication";
-            this.multipCheck.UseVisualStyleBackColor = true;
-            // 
-            // subtractionCheck
-            // 
-            this.subtractionCheck.AutoSize = true;
-            this.subtractionCheck.Location = new System.Drawing.Point(43, 96);
-            this.subtractionCheck.Margin = new System.Windows.Forms.Padding(6);
-            this.subtractionCheck.Name = "subtractionCheck";
-            this.subtractionCheck.Size = new System.Drawing.Size(153, 29);
-            this.subtractionCheck.TabIndex = 42;
-            this.subtractionCheck.Text = "Subtraction";
-            this.subtractionCheck.UseVisualStyleBackColor = true;
-            // 
-            // additionCheck
-            // 
-            this.additionCheck.AutoSize = true;
-            this.additionCheck.Checked = true;
-            this.additionCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.additionCheck.Location = new System.Drawing.Point(43, 32);
-            this.additionCheck.Margin = new System.Windows.Forms.Padding(6);
-            this.additionCheck.Name = "additionCheck";
-            this.additionCheck.Size = new System.Drawing.Size(122, 29);
-            this.additionCheck.TabIndex = 41;
-            this.additionCheck.Text = "Addition";
-            this.additionCheck.UseVisualStyleBackColor = true;
             // 
             // gamePage
             // 
@@ -490,6 +495,8 @@
             this.backPanel.ResumeLayout(false);
             this.racePanel.ResumeLayout(false);
             this.racePanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.botCar1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -503,8 +510,6 @@
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awards)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
