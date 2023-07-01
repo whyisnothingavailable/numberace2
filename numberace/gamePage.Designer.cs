@@ -315,7 +315,7 @@
             this.questionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.questionLabel.AutoSize = true;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.questionLabel.ForeColor = System.Drawing.SystemColors.MenuText;
             this.questionLabel.Location = new System.Drawing.Point(34, 46);
             this.questionLabel.Name = "questionLabel";
             this.questionLabel.Size = new System.Drawing.Size(652, 108);

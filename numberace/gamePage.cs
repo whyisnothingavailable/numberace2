@@ -30,10 +30,8 @@ namespace numberace
         SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\jinny\Downloads\RPReplay-Final1687929196.wav");
 
 
-        int highscore = 0;
         int answer;
         string Ans;
-        int quesRan;
         int num1;
         int num2;
         int carCount;
@@ -111,15 +109,13 @@ namespace numberace
                 op4 = true; // set op3 as true because optionButton3 has the correct answer
             }
 
-            if (carCount >= 100)
+            if (carCount >= 4000)
             {
                 endGame(sender, e);
             }
 
             int x = -48;
-            int y = 0;
-
-            
+            int y = 0;           
 
         }
         private void correct_Answer(object sender, EventArgs e) // method for correct answer
@@ -129,11 +125,8 @@ namespace numberace
             trackPicBox.Top = trackPicBox.Top + 200;
             //ding.Play();
             quizPanel.BackColor = Color.Green;
-            carCount = (carCount +500);
-                       bot1_Race(sender, e);
-                       bot2_Race(sender, e);
-            playerCar.Top = playerCar.Top + 5;
-
+            carCount = (carCount +200);                       
+            panel1.Top = panel1.Top + 10;
 
         }
         private void incorrect_Answer(object sender, EventArgs e)
@@ -142,33 +135,11 @@ namespace numberace
             totalScore.Text = score.ToString(); //// display (new) total score
             //horn.Play();
             quizPanel.BackColor = Color.Red;
-            botCar1.Top = botCar1.Top + 5;
-            botCar2.Top = botCar2.Top + 5;
+            panel3.Top = panel3.Top + 10;
+            panel1.Top = panel1.Top + 10;
 
         }
 
-        private void bot1_Race(object sender, EventArgs e)
-                {
-                    Random rnd = new Random(); // 
-                    int botRan = rnd.Next(0, 2); // 
-                    if (botRan == 0)
-                    { }
-                    if (botRan == 1)
-                    {
-                        botCar1.Top = botCar1.Top - 80; // move car up
-                    }
-                }
-               private void bot2_Race(object sender, EventArgs e)
-                {
-                    Random rnd = new Random(); // 
-                    int botRan = rnd.Next(0, 2); // 
-                    if (botRan == 0)
-                    { }
-                    if (botRan == 1)
-                    {
-                        botCar2.Top = botCar2.Top - 80; // move car up
-                    }
-                }
 
         private void endGame(object sender, EventArgs e)
         {
@@ -186,52 +157,52 @@ namespace numberace
             gamePanel.Visible = true;
             countDownTimer.Stop();
             backButton.Enabled = false;
-            if (playerCar.Top > botCar1.Top)
+            retryButton.Enabled = true;
+            homeButton.Enabled = true;
+            if (panel1.Top > panel3.Top)
             {
-                if (playerCar.Top > botCar2.Top)
+                if (panel1.Top > panel2.Top)
                 {
                     gameLbl.Text = "1ST";
 
                 }
-                if (playerCar.Top < botCar2.Top)
+                if (panel1.Top < panel2.Top)
                 {
                     gameLbl.Text = "2ND";
                 }
-
-
             }
-            if (playerCar.Top > botCar2.Top)
+            if (panel1.Top > panel2.Top)
             {
-                if (playerCar.Top > botCar1.Top)
+                if (panel1.Top > panel3.Top)
                 {
                     gameLbl.Text = "1ST";
 
                 }
-                if (playerCar.Top > botCar1.Top)
+                if (panel1.Top > panel3.Top)
                 {
                     gameLbl.Text = "2ND";
                 }
             }
-            if (playerCar.Top < botCar2.Top)
+            if (panel1.Top < panel2.Top)
             {
-                if (playerCar.Top > botCar1.Top)
+                if (panel1.Top > panel3.Top)
                 {
                     gameLbl.Text = "2ND";
 
                 }
-                if (playerCar.Top < botCar1.Top)
+                if (panel1.Top < panel3.Top)
                 {
                     gameLbl.Text = "3RD";
                 }
             }
-            if (playerCar.Top < botCar1.Top)
+            if (panel1.Top < panel3.Top)
             {
-                if (playerCar.Top > botCar2.Top)
+                if (panel1.Top > panel2.Top)
                 {
                     gameLbl.Text = "2ND";
 
                 }
-                if (playerCar.Top < botCar2.Top)
+                if (panel1.Top < panel2.Top)
                 {
                     gameLbl.Text = "3RD";
                 }
