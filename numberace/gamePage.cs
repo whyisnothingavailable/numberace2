@@ -126,7 +126,7 @@ namespace numberace
             //ding.Play();
             quizPanel.BackColor = Color.Green;
             carCount = (carCount +200);                       
-            panel1.Top = panel1.Top + 10;
+            panel1.Top = panel1.Top - 10;
 
         }
         private void incorrect_Answer(object sender, EventArgs e)
@@ -135,8 +135,8 @@ namespace numberace
             totalScore.Text = score.ToString(); //// display (new) total score
             //horn.Play();
             quizPanel.BackColor = Color.Red;
-            panel3.Top = panel3.Top + 10;
-            panel1.Top = panel1.Top + 10;
+            panel3.Top = panel3.Top - 10;
+            panel1.Top = panel1.Top - 10;
 
         }
 
@@ -350,7 +350,7 @@ namespace numberace
             }
             if (seconds < -1)
             {
-                trackPicBox.Top = trackPicBox.Top + 20;
+                trackPicBox.Top = trackPicBox.Top + 100;
                 carCount = carCount + 20;
             }
         }
