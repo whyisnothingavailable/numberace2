@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace numberace
 {
     public partial class homePage : Form
     {
+        SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\jinny\Downloads\RPReplay-Final1687929196.wav");
+
         public homePage()
         {
             InitializeComponent();
+        }
+
+        private void homePage_Load(object sender, EventArgs e)
+        {
+            gameMusic.Play();
         }
     }
 }

@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.backButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(596, 99);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(86, 89);
+            this.backButton.TabIndex = 0;
+            this.backButton.Text = "button1";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // customPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.backButton);
+            this.Name = "customPage";
             this.Text = "customPage1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button backButton;
     }
 }

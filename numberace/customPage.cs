@@ -16,5 +16,12 @@ namespace numberace
         {
             InitializeComponent();
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // hide this form (gamepage)
+            homePage back = new homePage(); // link to customPage
+            back.Show(); // show customPage form
+        }
     }
 }

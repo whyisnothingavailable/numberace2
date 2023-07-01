@@ -41,23 +41,23 @@ namespace numberace
         private void addGo(object sender, EventArgs e)
         {
             answer = num1 + num2;
-            questionLabel.Text = num1.ToString() + " + " + num2.ToString();
+            questionLabel.Text = num1.ToString() + " + " + num2.ToString() + " = ";
         }
         private void subGo(object sender, EventArgs e)
         {
             answer = num1 - num2;
-            questionLabel.Text = num1.ToString() + " - " + num2.ToString();
+            questionLabel.Text = num1.ToString() + " - " + num2.ToString() + " = ";
         }
         private void mulGo(object sender, EventArgs e)
         {
             answer = num1 * num2;
-            questionLabel.Text = num1.ToString() + " x " + num2.ToString();
+            questionLabel.Text = num1.ToString() + " x " + num2.ToString() + " = ";
         }
         private void divGo(object sender, EventArgs e)
         {
             int multi = num1 * num2;
             answer = num1;
-            questionLabel.Text = multi.ToString() + " ÷ " + num2.ToString();
+            questionLabel.Text = multi.ToString() + " ÷ " + num2.ToString() + " = ";
         }
         private void generate_Question(object sender, EventArgs e)
         {
@@ -67,6 +67,8 @@ namespace numberace
             op2 = false; // set op2 as false
             op3 = false; // set op3 as false
             op4 = false; // set op4 as false
+
+
 
             Random rnd = new Random(); // create a new Random variable called rnd
             num1 = rnd.Next(0, 3); // generate random int x
@@ -109,7 +111,6 @@ namespace numberace
                 optionButton4.Text = Ans;
                 op4 = true; // set op3 as true because optionButton3 has the correct answer
             }
-
 
             if (correctCount > 8)
             {
@@ -179,11 +180,12 @@ namespace numberace
             optionButton3.Text = ""; // and this one
             optionButton4.Text = ""; // and this one
             totalScore.Text = score.ToString(); // write in the totalScore label: "Total Score = (insert score)"
+            gamePanel.Visible = true;
+
         }
 
         private void beginButton_Click(object sender, EventArgs e)
         {
-            seconds = 0; // set seconds to 20
             generate_Question(sender, e); // go the generate_Question method (down below!)
             score = 0;
             playerCar.Location = new Point(310, 400);
@@ -253,6 +255,19 @@ namespace numberace
             FormBorderStyle = FormBorderStyle.Sizable;
             WindowState = FormWindowState.Maximized;
             TopMost = true;
+            optionButton1.Enabled = false;
+            optionButton2.Enabled = false;
+            optionButton3.Enabled = false;
+            optionButton4.Enabled = false;
+            questionLabel.Text = ""; // empty the question
+            optionButton1.Text = ""; // and this option button
+            optionButton2.Text = ""; // and this one
+            optionButton3.Text = ""; // and this one
+            optionButton4.Text = ""; // and this one
+            seconds = 3;
+            countDownTimer.Start();
+            gamePanel.Visible = false;
+
         }
 
         private void correctTimer_Tick(object sender, EventArgs e)
@@ -266,6 +281,58 @@ namespace numberace
             {
 
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e) // go back button
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo); // the message box
+            if (dialogResult == DialogResult.Yes) // if the yes button is chosen
+            {
+                this.Hide(); // hide this form (gamepage)
+                customPage back = new customPage(); // link to customPage
+                back.Show(); // show customPage form
+            }
+            else if (dialogResult == DialogResult.No) // if the no button is chosen
+            {
+
+            }
+        }
+
+        private void countDownTimer_Tick(object sender, EventArgs e)
+        {
+
+            countdownLabel.Text = seconds--.ToString();
+
+            if (seconds < 0)
+            {
+                countdownLabel.Text = "Go!";
+                
+                if (seconds == -2)
+                {
+                    trackPicBox.Top = trackPicBox.Top + 300;
+                    generate_Question(sender, e);
+                    optionButton1.Enabled = true;
+                    optionButton2.Enabled = true;
+                    optionButton3.Enabled = true;
+                    optionButton4.Enabled = true;
+
+                    countdownLabel.Visible = false;
+                }
+               
+            }
+            if (seconds < -1)
+            {
+                trackPicBox.Top = trackPicBox.Top + 10;
+            }
+        }
+
+        private void trackPicBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gamePage_Shown(object sender, EventArgs e)
+        {
         }
     }
 }
