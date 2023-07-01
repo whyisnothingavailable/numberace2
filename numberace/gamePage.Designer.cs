@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gamePage));
             this.backPanel = new System.Windows.Forms.TableLayoutPanel();
             this.racePanel = new System.Windows.Forms.Panel();
+            this.countdownLabel = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.beginButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.botCar1 = new System.Windows.Forms.PictureBox();
@@ -49,9 +51,7 @@
             this.optionButton1 = new System.Windows.Forms.Button();
             this.questionLabel = new System.Windows.Forms.Label();
             this.correctTimer = new System.Windows.Forms.Timer(this.components);
-            this.backButton = new System.Windows.Forms.Button();
             this.countDownTimer = new System.Windows.Forms.Timer(this.components);
-            this.countdownLabel = new System.Windows.Forms.Label();
             this.gamePanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +60,11 @@
             this.awards = new System.Windows.Forms.PictureBox();
             this.rankingLbl = new System.Windows.Forms.Label();
             this.gameLbl = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.diviCheck = new System.Windows.Forms.CheckBox();
+            this.multipCheck = new System.Windows.Forms.CheckBox();
+            this.subtractionCheck = new System.Windows.Forms.CheckBox();
+            this.additionCheck = new System.Windows.Forms.CheckBox();
             this.backPanel.SuspendLayout();
             this.racePanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,6 +78,7 @@
             this.optionPanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awards)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // backPanel
@@ -94,6 +100,7 @@
             // 
             // racePanel
             // 
+            this.racePanel.Controls.Add(this.panel4);
             this.racePanel.Controls.Add(this.countdownLabel);
             this.racePanel.Controls.Add(this.backButton);
             this.racePanel.Controls.Add(this.beginButton);
@@ -108,6 +115,29 @@
             this.racePanel.Name = "racePanel";
             this.racePanel.Size = new System.Drawing.Size(720, 938);
             this.racePanel.TabIndex = 0;
+            // 
+            // countdownLabel
+            // 
+            this.countdownLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.countdownLabel.AutoSize = true;
+            this.countdownLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countdownLabel.Location = new System.Drawing.Point(264, 657);
+            this.countdownLabel.Name = "countdownLabel";
+            this.countdownLabel.Size = new System.Drawing.Size(199, 217);
+            this.countdownLabel.TabIndex = 0;
+            this.countdownLabel.Text = "#";
+            this.countdownLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backButton
+            // 
+            this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(24, 23);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(115, 67);
+            this.backButton.TabIndex = 1;
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // beginButton
             // 
@@ -304,33 +334,10 @@
             // 
             this.correctTimer.Tick += new System.EventHandler(this.correctTimer_Tick);
             // 
-            // backButton
-            // 
-            this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(24, 23);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(115, 67);
-            this.backButton.TabIndex = 1;
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // countDownTimer
             // 
             this.countDownTimer.Interval = 800;
             this.countDownTimer.Tick += new System.EventHandler(this.countDownTimer_Tick);
-            // 
-            // countdownLabel
-            // 
-            this.countdownLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.countdownLabel.AutoSize = true;
-            this.countdownLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countdownLabel.Location = new System.Drawing.Point(264, 657);
-            this.countdownLabel.Name = "countdownLabel";
-            this.countdownLabel.Size = new System.Drawing.Size(199, 217);
-            this.countdownLabel.TabIndex = 0;
-            this.countdownLabel.Text = "#";
-            this.countdownLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gamePanel
             // 
@@ -410,6 +417,64 @@
             this.gameLbl.TabIndex = 0;
             this.gameLbl.Text = "Game Over!";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.diviCheck);
+            this.panel4.Controls.Add(this.multipCheck);
+            this.panel4.Controls.Add(this.subtractionCheck);
+            this.panel4.Controls.Add(this.additionCheck);
+            this.panel4.Location = new System.Drawing.Point(12, 768);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(479, 158);
+            this.panel4.TabIndex = 51;
+            // 
+            // diviCheck
+            // 
+            this.diviCheck.AutoSize = true;
+            this.diviCheck.Location = new System.Drawing.Point(269, 96);
+            this.diviCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.diviCheck.Name = "diviCheck";
+            this.diviCheck.Size = new System.Drawing.Size(120, 29);
+            this.diviCheck.TabIndex = 44;
+            this.diviCheck.Text = "Division";
+            this.diviCheck.UseVisualStyleBackColor = true;
+            // 
+            // multipCheck
+            // 
+            this.multipCheck.AutoSize = true;
+            this.multipCheck.Location = new System.Drawing.Point(269, 32);
+            this.multipCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.multipCheck.Name = "multipCheck";
+            this.multipCheck.Size = new System.Drawing.Size(170, 29);
+            this.multipCheck.TabIndex = 43;
+            this.multipCheck.Text = "Multiplication";
+            this.multipCheck.UseVisualStyleBackColor = true;
+            // 
+            // subtractionCheck
+            // 
+            this.subtractionCheck.AutoSize = true;
+            this.subtractionCheck.Location = new System.Drawing.Point(43, 96);
+            this.subtractionCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.subtractionCheck.Name = "subtractionCheck";
+            this.subtractionCheck.Size = new System.Drawing.Size(153, 29);
+            this.subtractionCheck.TabIndex = 42;
+            this.subtractionCheck.Text = "Subtraction";
+            this.subtractionCheck.UseVisualStyleBackColor = true;
+            // 
+            // additionCheck
+            // 
+            this.additionCheck.AutoSize = true;
+            this.additionCheck.Checked = true;
+            this.additionCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.additionCheck.Location = new System.Drawing.Point(43, 32);
+            this.additionCheck.Margin = new System.Windows.Forms.Padding(6);
+            this.additionCheck.Name = "additionCheck";
+            this.additionCheck.Size = new System.Drawing.Size(122, 29);
+            this.additionCheck.TabIndex = 41;
+            this.additionCheck.Text = "Addition";
+            this.additionCheck.UseVisualStyleBackColor = true;
+            // 
             // gamePage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -438,6 +503,8 @@
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awards)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -474,6 +541,11 @@
         private System.Windows.Forms.PictureBox awards;
         private System.Windows.Forms.Label rankingLbl;
         private System.Windows.Forms.Label gameLbl;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.CheckBox diviCheck;
+        public System.Windows.Forms.CheckBox multipCheck;
+        public System.Windows.Forms.CheckBox subtractionCheck;
+        public System.Windows.Forms.CheckBox additionCheck;
     }
 }
 

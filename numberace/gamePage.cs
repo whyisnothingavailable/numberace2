@@ -69,7 +69,6 @@ namespace numberace
             op4 = false; // set op4 as false
 
 
-
             Random rnd = new Random(); // create a new Random variable called rnd
             num1 = rnd.Next(0, 3); // generate random int x
             num2 = rnd.Next(0, 3); // generate random int y
@@ -119,7 +118,230 @@ namespace numberace
             }
 
             int x = -48;
-            int y = 0;           
+            int y = 0;
+
+            if (additionCheck.Checked == true)
+            {
+                if (subtractionCheck.Checked == true)
+                {
+                    if (multipCheck.Checked == true)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 5); // generate random option int (1 
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                subGo(sender, e);
+                            }
+                            if (quesRan == 3)
+                            {
+                                mulGo(sender, e);
+                            }
+                            if (quesRan == 4)
+                            {
+                                divGo(sender, e);
+                            }
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            quesRan = rnd.Next(1, 4); // generate random option int (1 
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                subGo(sender, e);
+                            }
+                            if (quesRan == 3)
+                            {
+                                mulGo(sender, e);
+                            }
+                        }
+                    }
+                    if (multipCheck.Checked == false)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 4);
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                subGo(sender, e);
+                            }
+                            if (quesRan == 3)
+                            {
+                                divGo(sender, e);
+                            }
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            quesRan = rnd.Next(1, 3);
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                subGo(sender, e);
+                            }
+                        }
+                    }
+                }
+                if (subtractionCheck.Checked == false)
+                {
+                    if (multipCheck.Checked == true)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 4);
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                mulGo(sender, e);
+                            }
+                            if (quesRan == 3)
+                            {
+                                divGo(sender, e);
+                            }
+
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            quesRan = rnd.Next(1, 3);
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                mulGo(sender, e);
+                            }
+                        }
+                    }
+                    if (multipCheck.Checked == false)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 3);
+                            if (quesRan == 1)
+                            {
+                                addGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                divGo(sender, e);
+                            }
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            addGo(sender, e);
+                        }
+                    }
+                }
+            } // if addition is checked
+
+            if (additionCheck.Checked == false)
+            {
+                if (subtractionCheck.Checked == true)
+                {
+                    if (multipCheck.Checked == true)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 4);
+                            if (quesRan == 1)
+                            {
+                                subGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                mulGo(sender, e);
+                            }
+                            if (quesRan == 3)
+                            {
+                                divGo(sender, e);
+                            }
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            quesRan = rnd.Next(1, 3);
+                            if (quesRan == 1)
+                            {
+                                subGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                mulGo(sender, e);
+                            }
+                        }
+                    }
+                    if (multipCheck.Checked == false)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 3);
+                            if (quesRan == 1)
+                            {
+                                subGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                divGo(sender, e);
+                            }
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            subGo(sender, e);
+                        }
+                    }
+                }
+                if (subtractionCheck.Checked == false)
+                {
+                    if (multipCheck.Checked == true)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            quesRan = rnd.Next(1, 3);
+                            if (quesRan == 1)
+                            {
+                                mulGo(sender, e);
+                            }
+                            if (quesRan == 2)
+                            {
+                                divGo(sender, e);
+                            }
+
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            mulGo(sender, e);
+                        }
+
+                    }
+                    if (multipCheck.Checked == false)
+                    {
+                        if (diviCheck.Checked == true)
+                        {
+                            divGo(sender, e);
+                        }
+                        if (diviCheck.Checked == false)
+                        {
+                            questionLabel.Text = "You didn't pick anything!!";
+                        }
+                    }
+                }
+            } // if addition is not checked
 
         }
         private void correct_Answer(object sender, EventArgs e) // method for correct answer
@@ -127,7 +349,7 @@ namespace numberace
             score = score + 10; // add 1 to score
             totalScore.Text = score.ToString(); // display (new) total score
             trackPicBox.Top = trackPicBox.Top + 200;
-            ding.Play();
+            //ding.Play();
             quizPanel.BackColor = Color.Green;
             correctCount++;
                        bot1_Race(sender, e);
@@ -138,7 +360,7 @@ namespace numberace
         {
             score = score - 5; // minus 1 from score
             totalScore.Text = score.ToString(); //// display (new) total score
-            horn.Play();
+            //horn.Play();
             quizPanel.BackColor = Color.Red;
                        bot1_Race(sender, e);
                        bot2_Race(sender, e);
@@ -186,16 +408,8 @@ namespace numberace
 
         private void beginButton_Click(object sender, EventArgs e)
         {
-            generate_Question(sender, e); // go the generate_Question method (down below!)
-            score = 0;
-            playerCar.Location = new Point(310, 400);
-            botCar1.Location = new Point(195, 400);
-            botCar2.Location = new Point(425, 400);
-            optionButton1.Enabled = true;
-            optionButton2.Enabled = true;
-            optionButton3.Enabled = true;
-            optionButton4.Enabled = true;
-            correctCount = 0;
+            seconds = 3;
+            countDownTimer.Start();
         }
 
         private void optionButton1_Click_1(object sender, EventArgs e)
@@ -264,10 +478,7 @@ namespace numberace
             optionButton2.Text = ""; // and this one
             optionButton3.Text = ""; // and this one
             optionButton4.Text = ""; // and this one
-            seconds = 3;
-            countDownTimer.Start();
             gamePanel.Visible = false;
-
         }
 
         private void correctTimer_Tick(object sender, EventArgs e)
@@ -310,13 +521,17 @@ namespace numberace
                 if (seconds == -2)
                 {
                     trackPicBox.Top = trackPicBox.Top + 300;
+                    countdownLabel.Visible = false;
                     generate_Question(sender, e);
+                    score = 0;
+                    playerCar.Location = new Point(310, 400);
+                    botCar1.Location = new Point(195, 400);
+                    botCar2.Location = new Point(425, 400);
                     optionButton1.Enabled = true;
                     optionButton2.Enabled = true;
                     optionButton3.Enabled = true;
                     optionButton4.Enabled = true;
-
-                    countdownLabel.Visible = false;
+                    correctCount = 0;
                 }
                
             }

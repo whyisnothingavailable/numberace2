@@ -24,5 +24,12 @@ namespace numberace
         {
             gameMusic.Play();
         }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // hide this page
+            gamePage f = new gamePage(); //link to gamepage
+            f.Show(); // show gamepage
+        }
     }
 }
