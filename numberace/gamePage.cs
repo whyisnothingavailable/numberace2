@@ -16,6 +16,7 @@ namespace numberace
         public gamePage()
         {
             InitializeComponent();
+            lbl_Value.Text = Properties.Settings.Default.h_score; // links the value of the label to h_score
         }
 
         int seconds;  //create an int(numbers) variable named seconds
@@ -30,11 +31,11 @@ namespace numberace
         SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\jinny\Downloads\RPReplay-Final1687929196.wav");
 
 
-        int answer;
-        string Ans;
-        int num1;
-        int num2;
-        int carCount;
+        int answer; // create an int variable named answer
+        string Ans; // create a string named Ans
+        int num1; // create an int variable named num1
+        int num2; // create an int variable named num2
+        int carCount; // create an intn variable named carCount
 
         private void addGo(object sender, EventArgs e)
         {
@@ -72,7 +73,7 @@ namespace numberace
             num2 = rnd.Next(0, 3); // generate random int y
             int optionRan = rnd.Next(1, 5); // 
 
-            addGo(sender, e);
+            addGo(sender, e); // do the addGo method
 
             Ans = answer.ToString();
 
@@ -135,10 +136,8 @@ namespace numberace
             totalScore.Text = score.ToString(); //// display (new) total score
             //horn.Play();
             quizPanel.BackColor = Color.Red;
-            panel3.Top = panel3.Top - 10;
-            panel1.Top = panel1.Top - 10;
-
-        }
+            carCount = (carCount + 100); // added
+            panel3.Top = panel3.Top - 20;        }
 
 
         private void endGame(object sender, EventArgs e)
@@ -159,59 +158,75 @@ namespace numberace
             backButton.Enabled = false;
             retryButton.Enabled = true;
             homeButton.Enabled = true;
-            if (panel1.Top > panel3.Top)
+            awards.Visible = true;
+            awards.BringToFront();
+            if (panel1.Top < panel3.Top) // if panel 1 is above panel 3
             {
-                if (panel1.Top > panel2.Top)
+                if (panel1.Top < panel2.Top) // if panel 1 is above panel 2
                 {
                     gameLbl.Text = "1ST";
+                    awards.Image = Properties.Resources.pixil_frame_03; // display the third image (1st place)
 
                 }
-                if (panel1.Top < panel2.Top)
+                if (panel1.Top > panel2.Top) // if panel 2 is above panel 1
                 {
                     gameLbl.Text = "2ND";
+                    awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
                 }
             }
-            if (panel1.Top > panel2.Top)
+            if (panel1.Top < panel2.Top) // if panel 1 is above panel 2
             {
-                if (panel1.Top > panel3.Top)
+                if (panel1.Top < panel3.Top) // if panel 1 is above panel 3
                 {
                     gameLbl.Text = "1ST";
+                    awards.Image = Properties.Resources.pixil_frame_03; // display the third image (1st place)
+
 
                 }
-                if (panel1.Top > panel3.Top)
+                if (panel1.Top > panel3.Top) // if panel 1 is below panel 3 
                 {
                     gameLbl.Text = "2ND";
+                    awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
+
                 }
             }
-            if (panel1.Top < panel2.Top)
+            if (panel1.Top > panel2.Top) // if panel 1 is below panel 2
             {
-                if (panel1.Top > panel3.Top)
+                if (panel1.Top < panel3.Top) // if panel 1 is above panel 3
                 {
                     gameLbl.Text = "2ND";
+                    awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
+
 
                 }
-                if (panel1.Top < panel3.Top)
+                if (panel1.Top > panel3.Top) // if panel 1 is below panel 3
                 {
                     gameLbl.Text = "3RD";
-                }
-            }
-            if (panel1.Top < panel3.Top)
-            {
-                if (panel1.Top > panel2.Top)
-                {
-                    gameLbl.Text = "2ND";
+                    awards.Image = Properties.Resources.pixil_frame_01; // display the third image (1st place)
 
                 }
-                if (panel1.Top < panel2.Top)
+            }
+            if (panel1.Top > panel3.Top) // if panel 1 is below panel 3
+            {
+                if (panel1.Top < panel2.Top) // if panel 1 is above panel 2
+                {
+                    gameLbl.Text = "2ND";
+                    awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
+
+
+                }
+                if (panel1.Top > panel2.Top) // if panel 1 is below panel 
                 {
                     gameLbl.Text = "3RD";
+                    awards.Image = Properties.Resources.pixil_frame_01; // display the third image (1st place)
+
                 }
             }
-            int a = Int32.Parse(label1.Text);
+            int a = Int32.Parse(lbl_Value.Text);
             if (score > a)
             {
-                label1.Text = score.ToString();
-                Properties.Settings.Default.h_score = label1.Text;
+                awards.Text = score.ToString();
+                Properties.Settings.Default.h_score = awards.Text;
                 Properties.Settings.Default.Save();
             }
 
@@ -279,7 +294,7 @@ namespace numberace
 
         private void gamePage_Load_1(object sender, EventArgs e)
         {
-            FormBorderStyle = FormBorderStyle.Sizable;
+            FormBorderStyle = FormBorderStyle.Sizable; 
             WindowState = FormWindowState.Maximized;
             TopMost = true;
             optionButton1.Enabled = false;
@@ -294,13 +309,15 @@ namespace numberace
             gamePanel.Visible = true;
             retryButton.Enabled = false;
             homeButton.Enabled = false;
+            awards.Visible = false;
+            awards.Image = Properties.Resources.pixil_frame_01;
 
         }
 
         private void correctTimer_Tick(object sender, EventArgs e)
         {
-            colourSeconds++;
-            if (colourSeconds < 5)
+            colourSeconds++; // increase the colour seconds by 1
+            if (colourSeconds < 5) 
             {
                 quizPanel.BackColor = Color.Green;
             }
@@ -354,11 +371,17 @@ namespace numberace
                 carCount = carCount + 20;
             }
         }
-
  
         private void retryButton_Click(object sender, EventArgs e)
         {
-            gamePage_Load_1(sender, e);
+            this.Refresh();
+            Refresh();
+            this.Hide();
+            gamePage ss = new gamePage();
+            ss.Show();
+            awards.Visible = false;
+            awards.Image = Properties.Resources.pixil_frame_01;
+
         }
 
         private void homeButton_Click(object sender, EventArgs e)
