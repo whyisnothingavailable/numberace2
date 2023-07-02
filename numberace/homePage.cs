@@ -13,7 +13,7 @@ namespace numberace
 {
     public partial class homePage : Form
     {
-        SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\jinny\Source\Repos\numberace3\numberace\Resources\RPReplay-Final1687929196.wav");
+        SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\manga\source\repos\numberace2\numberace\Resources\RPReplay-Final1687929196.wav");
 
         public homePage()
         {

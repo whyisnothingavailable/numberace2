@@ -47,8 +47,8 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlay.Location = new System.Drawing.Point(469, 684);
+            this.btnPlay.Font = new System.Drawing.Font("Retro Gaming", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.Location = new System.Drawing.Point(501, 735);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(900, 208);
             this.btnPlay.TabIndex = 2;

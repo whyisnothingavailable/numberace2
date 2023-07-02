@@ -26,9 +26,9 @@ namespace numberace
         bool op3; // create a bool variable named op3
         bool op4; // create a bool variable named op4
         int score; // create an int variable names score
-        SoundPlayer ding = new SoundPlayer(@"C:\Users\jinny\Downloads\ding-1-14705.wav");
-        SoundPlayer horn = new SoundPlayer(@"C:\Users\jinny\Downloads\truck-signal-153263.wav.wav");
-        SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\jinny\Downloads\RPReplay-Final1687929196.wav");
+        SoundPlayer ding = new SoundPlayer(@"C:\Users\manga\Downloads\ding-1-14705.wav");
+        SoundPlayer horn = new SoundPlayer(@"C:\Users\manga\Downloads\truck-signal-153263.wav.wav");
+        SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\manga\Downloads\RPReplay-Final1687929196.wav");
 
 
         int answer; // create an int variable named answer
@@ -110,7 +110,7 @@ namespace numberace
                 op4 = true; // set op3 as true because optionButton3 has the correct answer
             }
 
-            if (carCount >= 4000)
+            if (carCount >= 3000)
             {
                 endGame(sender, e);
             }

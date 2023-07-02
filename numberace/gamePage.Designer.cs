@@ -32,9 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gamePage));
             this.backPanel = new System.Windows.Forms.TableLayoutPanel();
             this.racePanel = new System.Windows.Forms.Panel();
+            this.lbl_Value = new System.Windows.Forms.Label();
+            this.lblHighscore = new System.Windows.Forms.Label();
             this.countdownLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
-            this.beginButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.botCar1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,12 +53,13 @@
             this.questionLabel = new System.Windows.Forms.Label();
             this.correctTimer = new System.Windows.Forms.Timer(this.components);
             this.countDownTimer = new System.Windows.Forms.Timer(this.components);
-            this.gamePanel = new System.Windows.Forms.Panel();
-            this.homeButton = new System.Windows.Forms.Button();
-            this.retryButton = new System.Windows.Forms.Button();
-            this.rankingLbl = new System.Windows.Forms.Label();
             this.gameLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.rankingLbl = new System.Windows.Forms.Label();
+            this.retryButton = new System.Windows.Forms.Button();
+            this.homeButton = new System.Windows.Forms.Button();
+            this.gamePanel = new System.Windows.Forms.Panel();
+            this.beginButton = new System.Windows.Forms.Button();
+            this.awards = new System.Windows.Forms.PictureBox();
             this.backPanel.SuspendLayout();
             this.racePanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,6 +72,7 @@
             this.quizPanel.SuspendLayout();
             this.optionPanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.awards)).BeginInit();
             this.SuspendLayout();
             // 
             // backPanel
@@ -91,6 +94,8 @@
             // 
             // racePanel
             // 
+            this.racePanel.Controls.Add(this.lbl_Value);
+            this.racePanel.Controls.Add(this.lblHighscore);
             this.racePanel.Controls.Add(this.countdownLabel);
             this.racePanel.Controls.Add(this.backButton);
             this.racePanel.Controls.Add(this.panel3);
@@ -105,15 +110,35 @@
             this.racePanel.Size = new System.Drawing.Size(720, 938);
             this.racePanel.TabIndex = 0;
             // 
+            // lbl_Value
+            // 
+            this.lbl_Value.AutoSize = true;
+            this.lbl_Value.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Value.Location = new System.Drawing.Point(421, 77);
+            this.lbl_Value.Name = "lbl_Value";
+            this.lbl_Value.Size = new System.Drawing.Size(28, 27);
+            this.lbl_Value.TabIndex = 6;
+            this.lbl_Value.Text = "0";
+            // 
+            // lblHighscore
+            // 
+            this.lblHighscore.AutoSize = true;
+            this.lblHighscore.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHighscore.Location = new System.Drawing.Point(278, 77);
+            this.lblHighscore.Name = "lblHighscore";
+            this.lblHighscore.Size = new System.Drawing.Size(152, 27);
+            this.lblHighscore.TabIndex = 5;
+            this.lblHighscore.Text = "Highscore:";
+            // 
             // countdownLabel
             // 
             this.countdownLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.countdownLabel.AutoSize = true;
             this.countdownLabel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.countdownLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countdownLabel.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.countdownLabel.Location = new System.Drawing.Point(264, 657);
             this.countdownLabel.Name = "countdownLabel";
-            this.countdownLabel.Size = new System.Drawing.Size(199, 217);
+            this.countdownLabel.Size = new System.Drawing.Size(303, 244);
             this.countdownLabel.TabIndex = 0;
             this.countdownLabel.Text = "#";
             this.countdownLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,18 +153,6 @@
             this.backButton.TabIndex = 1;
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // beginButton
-            // 
-            this.beginButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.beginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.beginButton.Location = new System.Drawing.Point(0, 0);
-            this.beginButton.Name = "beginButton";
-            this.beginButton.Size = new System.Drawing.Size(599, 374);
-            this.beginButton.TabIndex = 5;
-            this.beginButton.Text = "BEGIN";
-            this.beginButton.UseVisualStyleBackColor = true;
-            this.beginButton.Click += new System.EventHandler(this.beginButton_Click);
             // 
             // panel3
             // 
@@ -207,10 +220,10 @@
             // totalScore
             // 
             this.totalScore.AutoSize = true;
-            this.totalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalScore.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalScore.Location = new System.Drawing.Point(328, 36);
             this.totalScore.Name = "totalScore";
-            this.totalScore.Size = new System.Drawing.Size(109, 25);
+            this.totalScore.Size = new System.Drawing.Size(155, 27);
             this.totalScore.TabIndex = 1;
             this.totalScore.Text = "totalScore";
             // 
@@ -264,7 +277,7 @@
             // optionButton4
             // 
             this.optionButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton4.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton4.Location = new System.Drawing.Point(360, 369);
             this.optionButton4.Name = "optionButton4";
             this.optionButton4.Size = new System.Drawing.Size(352, 360);
@@ -276,7 +289,7 @@
             // optionButton3
             // 
             this.optionButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton3.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton3.Location = new System.Drawing.Point(3, 369);
             this.optionButton3.Name = "optionButton3";
             this.optionButton3.Size = new System.Drawing.Size(351, 360);
@@ -288,7 +301,7 @@
             // optionButton2
             // 
             this.optionButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton2.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton2.Location = new System.Drawing.Point(360, 3);
             this.optionButton2.Name = "optionButton2";
             this.optionButton2.Size = new System.Drawing.Size(352, 360);
@@ -300,7 +313,7 @@
             // optionButton1
             // 
             this.optionButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionButton1.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionButton1.Location = new System.Drawing.Point(3, 3);
             this.optionButton1.Name = "optionButton1";
             this.optionButton1.Size = new System.Drawing.Size(351, 360);
@@ -314,11 +327,11 @@
             this.questionLabel.AllowDrop = true;
             this.questionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.questionLabel.AutoSize = true;
-            this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questionLabel.Font = new System.Drawing.Font("Retro Gaming", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.questionLabel.Location = new System.Drawing.Point(34, 46);
+            this.questionLabel.Location = new System.Drawing.Point(32, 0);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(652, 108);
+            this.questionLabel.Size = new System.Drawing.Size(656, 200);
             this.questionLabel.TabIndex = 1;
             this.questionLabel.Text = "questionLabel";
             // 
@@ -331,44 +344,18 @@
             this.countDownTimer.Interval = 800;
             this.countDownTimer.Tick += new System.EventHandler(this.countDownTimer_Tick);
             // 
-            // gamePanel
+            // gameLbl
             // 
-            this.gamePanel.BackColor = System.Drawing.Color.White;
-            this.gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gamePanel.Controls.Add(this.beginButton);
-            this.gamePanel.Controls.Add(this.label1);
-            this.gamePanel.Controls.Add(this.homeButton);
-            this.gamePanel.Controls.Add(this.retryButton);
-            this.gamePanel.Controls.Add(this.rankingLbl);
-            this.gamePanel.Controls.Add(this.gameLbl);
-            this.gamePanel.Location = new System.Drawing.Point(420, 355);
-            this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(601, 376);
-            this.gamePanel.TabIndex = 38;
-            // 
-            // homeButton
-            // 
-            this.homeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.Location = new System.Drawing.Point(328, 277);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(223, 65);
-            this.homeButton.TabIndex = 4;
-            this.homeButton.Text = "HOME";
-            this.homeButton.UseVisualStyleBackColor = true;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
-            // 
-            // retryButton
-            // 
-            this.retryButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.retryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retryButton.Location = new System.Drawing.Point(58, 277);
-            this.retryButton.Name = "retryButton";
-            this.retryButton.Size = new System.Drawing.Size(198, 65);
-            this.retryButton.TabIndex = 3;
-            this.retryButton.Text = "RETRY";
-            this.retryButton.UseVisualStyleBackColor = true;
-            this.retryButton.Click += new System.EventHandler(this.retryButton_Click);
+            this.gameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gameLbl.AutoSize = true;
+            this.gameLbl.Font = new System.Drawing.Font("Retro Gaming", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameLbl.Location = new System.Drawing.Point(259, 20);
+            this.gameLbl.Name = "gameLbl";
+            this.gameLbl.Size = new System.Drawing.Size(83, 102);
+            this.gameLbl.TabIndex = 0;
+            this.gameLbl.Text = "-";
+            this.gameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gameLbl.Click += new System.EventHandler(this.gameLbl_Click);
             // 
             // rankingLbl
             // 
@@ -379,29 +366,65 @@
             this.rankingLbl.Size = new System.Drawing.Size(0, 63);
             this.rankingLbl.TabIndex = 1;
             // 
-            // gameLbl
+            // retryButton
             // 
-            this.gameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gameLbl.AutoSize = true;
-            this.gameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameLbl.Location = new System.Drawing.Point(266, 0);
-            this.gameLbl.Name = "gameLbl";
-            this.gameLbl.Size = new System.Drawing.Size(66, 91);
-            this.gameLbl.TabIndex = 0;
-            this.gameLbl.Text = "-";
-            this.gameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gameLbl.Click += new System.EventHandler(this.gameLbl_Click);
+            this.retryButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.retryButton.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retryButton.Location = new System.Drawing.Point(58, 277);
+            this.retryButton.Name = "retryButton";
+            this.retryButton.Size = new System.Drawing.Size(198, 65);
+            this.retryButton.TabIndex = 3;
+            this.retryButton.Text = "RETRY";
+            this.retryButton.UseVisualStyleBackColor = true;
+            this.retryButton.Click += new System.EventHandler(this.retryButton_Click);
             // 
-            // label1
+            // homeButton
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 25);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "-";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.homeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.homeButton.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.Location = new System.Drawing.Point(328, 277);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(223, 65);
+            this.homeButton.TabIndex = 4;
+            this.homeButton.Text = "HOME";
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
+            // gamePanel
+            // 
+            this.gamePanel.BackColor = System.Drawing.Color.White;
+            this.gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gamePanel.Controls.Add(this.beginButton);
+            this.gamePanel.Controls.Add(this.awards);
+            this.gamePanel.Controls.Add(this.homeButton);
+            this.gamePanel.Controls.Add(this.retryButton);
+            this.gamePanel.Controls.Add(this.rankingLbl);
+            this.gamePanel.Controls.Add(this.gameLbl);
+            this.gamePanel.Location = new System.Drawing.Point(420, 355);
+            this.gamePanel.Name = "gamePanel";
+            this.gamePanel.Size = new System.Drawing.Size(601, 376);
+            this.gamePanel.TabIndex = 38;
+            // 
+            // beginButton
+            // 
+            this.beginButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.beginButton.Font = new System.Drawing.Font("Retro Gaming", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beginButton.Location = new System.Drawing.Point(0, 0);
+            this.beginButton.Name = "beginButton";
+            this.beginButton.Size = new System.Drawing.Size(599, 374);
+            this.beginButton.TabIndex = 5;
+            this.beginButton.Text = "BEGIN";
+            this.beginButton.UseVisualStyleBackColor = true;
+            this.beginButton.Click += new System.EventHandler(this.beginButton_Click);
+            // 
+            // awards
+            // 
+            this.awards.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.awards.Location = new System.Drawing.Point(159, 125);
+            this.awards.Name = "awards";
+            this.awards.Size = new System.Drawing.Size(300, 100);
+            this.awards.TabIndex = 6;
+            this.awards.TabStop = false;
             // 
             // gamePage
             // 
@@ -429,6 +452,7 @@
             this.optionPanel.ResumeLayout(false);
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.awards)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,17 +476,19 @@
         private System.Windows.Forms.PictureBox botCar1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox botCar2;
-        private System.Windows.Forms.Button beginButton;
         private System.Windows.Forms.Timer correctTimer;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Timer countDownTimer;
         private System.Windows.Forms.Label countdownLabel;
-        private System.Windows.Forms.Panel gamePanel;
-        private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Button retryButton;
-        private System.Windows.Forms.Label rankingLbl;
+        private System.Windows.Forms.Label lbl_Value;
+        private System.Windows.Forms.Label lblHighscore;
         private System.Windows.Forms.Label gameLbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label rankingLbl;
+        private System.Windows.Forms.Button retryButton;
+        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Panel gamePanel;
+        private System.Windows.Forms.Button beginButton;
+        private System.Windows.Forms.PictureBox awards;
     }
 }
 

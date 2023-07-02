@@ -16,7 +16,7 @@ namespace numberace
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gamePage());
+            Application.Run(new homePage());
         }
     }
 }
