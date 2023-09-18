@@ -1,4 +1,5 @@
-﻿using System;
+﻿using numberace.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,6 @@ namespace numberace
 {
     public partial class gamePage : Form
     {
-        public gamePage()
-        {
-            InitializeComponent();
-            lbl_Value.Text = Properties.Settings.Default.h_score; // links the value of the label to h_score
-        }
-
         int seconds;  //create an int(numbers) variable named seconds
         int colourSeconds=0;
         bool op1; // create a bool(true or false) variable named op1
@@ -26,9 +21,11 @@ namespace numberace
         bool op3; // create a bool variable named op3
         bool op4; // create a bool variable named op4
         int score; // create an int variable names score
-        SoundPlayer ding = new SoundPlayer(@"C:\Users\manga\Downloads\ding-1-14705.wav");
-        SoundPlayer horn = new SoundPlayer(@"C:\Users\manga\Downloads\truck-signal-153263.wav.wav");
-        SoundPlayer gameMusic = new SoundPlayer(@"C:\Users\manga\Downloads\RPReplay-Final1687929196.wav");
+        //SoundPlayer ding = new SoundPlayer(Resources.ding_1_14705);
+        SoundPlayer horn = new SoundPlayer(Resources.truck_signal_153263_wav__1_);
+        SoundPlayer gameMusic = new SoundPlayer(Resources.RPReplay_Final1687929196);
+        SoundPlayer ding = new SoundPlayer(Resources.ding_1_14705);
+
 
 
         int answer; // create an int variable named answer
@@ -36,6 +33,14 @@ namespace numberace
         int num1; // create an int variable named num1
         int num2; // create an int variable named num2
         int carCount; // create an intn variable named carCount
+        
+        public gamePage()
+        {
+            InitializeComponent();
+            lbl_Value.Text = Properties.Settings.Default.h_score; // links the value of the label to h_score
+        }
+
+        
 
         private void addGo(object sender, EventArgs e)
         {
@@ -124,7 +129,7 @@ namespace numberace
             score = score + 100; // add 100 to score
             totalScore.Text = score.ToString(); // display (new) total score
             trackPicBox.Top = trackPicBox.Top + 200;
-            //ding.Play();
+            ding.Play();
             quizPanel.BackColor = Color.Green;
             carCount = (carCount +200);                       
             panel1.Top = panel1.Top - 10;
@@ -134,7 +139,7 @@ namespace numberace
         {
             score = score - 20; // minus 1 from score
             totalScore.Text = score.ToString(); //// display (new) total score
-            //horn.Play();
+            horn.Play();
             quizPanel.BackColor = Color.Red;
             carCount = (carCount + 100); // added
             panel3.Top = panel3.Top - 20;        }
@@ -166,12 +171,14 @@ namespace numberace
                 {
                     gameLbl.Text = "1ST";
                     awards.Image = Properties.Resources.pixil_frame_03; // display the third image (1st place)
-
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
                 }
                 if (panel1.Top > panel2.Top) // if panel 2 is above panel 1
                 {
                     gameLbl.Text = "2ND";
                     awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
+
                 }
             }
             if (panel1.Top < panel2.Top) // if panel 1 is above panel 2
@@ -180,6 +187,7 @@ namespace numberace
                 {
                     gameLbl.Text = "1ST";
                     awards.Image = Properties.Resources.pixil_frame_03; // display the third image (1st place)
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
 
 
                 }
@@ -187,6 +195,8 @@ namespace numberace
                 {
                     gameLbl.Text = "2ND";
                     awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
+
 
                 }
             }
@@ -196,13 +206,14 @@ namespace numberace
                 {
                     gameLbl.Text = "2ND";
                     awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
-
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
 
                 }
                 if (panel1.Top > panel3.Top) // if panel 1 is below panel 3
                 {
                     gameLbl.Text = "3RD";
                     awards.Image = Properties.Resources.pixil_frame_01; // display the third image (1st place)
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
 
                 }
             }
@@ -212,6 +223,7 @@ namespace numberace
                 {
                     gameLbl.Text = "2ND";
                     awards.Image = Properties.Resources.pixil_frame_02; // display the third image (1st place)
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
 
 
                 }
@@ -219,6 +231,7 @@ namespace numberace
                 {
                     gameLbl.Text = "3RD";
                     awards.Image = Properties.Resources.pixil_frame_01; // display the third image (1st place)
+                    awards.SizeMode = PictureBoxSizeMode.StretchImage; // fit the image into the picturebox
 
                 }
             }
@@ -397,6 +410,11 @@ namespace numberace
         }
 
         private void gameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void awards_Click(object sender, EventArgs e)
         {
 
         }

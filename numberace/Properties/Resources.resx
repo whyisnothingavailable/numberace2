@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ding_1_14705" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ding-1-14705.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="pixil-frame-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pixil-frame-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -126,5 +129,14 @@
   </data>
   <data name="pixil-frame-03" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pixil-frame-03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Retro_Gaming" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Retro Gaming.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RPReplay_Final1687929196" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RPReplay-Final1687929196.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="truck_signal_153263_wav__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\truck-signal-153263.wav (1).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

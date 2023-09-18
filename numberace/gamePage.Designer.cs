@@ -136,7 +136,7 @@
             this.countdownLabel.AutoSize = true;
             this.countdownLabel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.countdownLabel.Font = new System.Drawing.Font("Retro Gaming", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countdownLabel.Location = new System.Drawing.Point(264, 657);
+            this.countdownLabel.Location = new System.Drawing.Point(294, 657);
             this.countdownLabel.Name = "countdownLabel";
             this.countdownLabel.Size = new System.Drawing.Size(303, 244);
             this.countdownLabel.TabIndex = 0;
@@ -158,7 +158,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel3.Controls.Add(this.botCar1);
-            this.panel3.Location = new System.Drawing.Point(182, 464);
+            this.panel3.Location = new System.Drawing.Point(182, 510);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(69, 117);
             this.panel3.TabIndex = 4;
@@ -179,7 +179,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Controls.Add(this.botCar2);
-            this.panel2.Location = new System.Drawing.Point(422, 464);
+            this.panel2.Location = new System.Drawing.Point(422, 509);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(69, 117);
             this.panel2.TabIndex = 4;
@@ -200,7 +200,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel1.Controls.Add(this.playerCar);
-            this.panel1.Location = new System.Drawing.Point(302, 464);
+            this.panel1.Location = new System.Drawing.Point(302, 511);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(69, 117);
             this.panel1.TabIndex = 3;
@@ -372,7 +372,7 @@
             this.retryButton.Font = new System.Drawing.Font("Retro Gaming", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retryButton.Location = new System.Drawing.Point(58, 277);
             this.retryButton.Name = "retryButton";
-            this.retryButton.Size = new System.Drawing.Size(198, 65);
+            this.retryButton.Size = new System.Drawing.Size(238, 65);
             this.retryButton.TabIndex = 3;
             this.retryButton.Text = "RETRY";
             this.retryButton.UseVisualStyleBackColor = true;
@@ -392,6 +392,7 @@
             // 
             // gamePanel
             // 
+            this.gamePanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gamePanel.BackColor = System.Drawing.Color.White;
             this.gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gamePanel.Controls.Add(this.beginButton);
@@ -400,16 +401,16 @@
             this.gamePanel.Controls.Add(this.retryButton);
             this.gamePanel.Controls.Add(this.rankingLbl);
             this.gamePanel.Controls.Add(this.gameLbl);
-            this.gamePanel.Location = new System.Drawing.Point(420, 355);
+            this.gamePanel.Location = new System.Drawing.Point(420, 273);
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(601, 376);
             this.gamePanel.TabIndex = 38;
             // 
             // beginButton
             // 
-            this.beginButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.beginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.beginButton.Font = new System.Drawing.Font("Retro Gaming", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.beginButton.Location = new System.Drawing.Point(0, 0);
+            this.beginButton.Location = new System.Drawing.Point(1, -1);
             this.beginButton.Name = "beginButton";
             this.beginButton.Size = new System.Drawing.Size(599, 374);
             this.beginButton.TabIndex = 5;
@@ -425,6 +426,7 @@
             this.awards.Size = new System.Drawing.Size(300, 100);
             this.awards.TabIndex = 6;
             this.awards.TabStop = false;
+            this.awards.Click += new System.EventHandler(this.awards_Click);
             // 
             // gamePage
             // 

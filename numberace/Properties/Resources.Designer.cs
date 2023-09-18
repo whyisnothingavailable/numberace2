@@ -61,6 +61,15 @@ namespace numberace.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ding_1_14705 {
+            get {
+                return ResourceManager.GetStream("ding_1_14705", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pixil_frame_01 {
@@ -87,6 +96,34 @@ namespace numberace.Properties {
             get {
                 object obj = ResourceManager.GetObject("pixil-frame-03", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Retro_Gaming {
+            get {
+                object obj = ResourceManager.GetObject("Retro_Gaming", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream RPReplay_Final1687929196 {
+            get {
+                return ResourceManager.GetStream("RPReplay_Final1687929196", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream truck_signal_153263_wav__1_ {
+            get {
+                return ResourceManager.GetStream("truck_signal_153263_wav__1_", resourceCulture);
             }
         }
     }
